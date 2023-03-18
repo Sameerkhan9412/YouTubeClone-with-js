@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- link custom css  -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- font-owesome link -->
+    <script src="https://kit.fontawesome.com/7b5f9d112b.js" crossorigin="anonymous"></script>
+    <title>YouTube Clone</title>
+    <!-- fav-icon -->
+    <link rel="shortcut icon" href="./images/icons8-youtube-48.png" type="image/x-icon">
+</head>
+<body>
+<!-- start navbar -->
+    <nav class="flex-div">
+        <div class="nav-left flex-div">
+            <a href="./index.html"> <img src="./images/youtube-logo.png" class="logo" alt=""></a>
+        </div>
+        <div class="nav-middle flex-div">
+            <div class="search-box flex-div">
+			<input type="text" id="query">
+			<img src="images/icons8-search-50.png"  id="search-btn">
+			</div>
+            <img src="./images/voice-search.png" class="mic-logo" alt="" >
+        </div>
+        <div class="nav-right flex-div">
+            <img src="./images/icons8-create-video-96.png" alt="">
+            <!-- <img src="./images/more.png" alt=""> -->
+            <img src="./images/icons8-notification-50.png" alt="">
+            <img src="./images/profile.jpeg" class="user-icon" alt="">
+        </div>
+    </nav>
+<!-- navbar end -->
+    <!-- -----------------------sidebar--------------------- -->
+
+    <div class=" play-container">
+        <div class="left-container">
+            <!-- play video -->
+            <div id="play-video"> 
+			</div>
+			<div id="description-and-viewcount">
+			<b id="views-and-puslished-date"></b>
+			<p id="description"></p>
+			</div>
+			<script src="js/playvideo.js"></script>
+		</div>
+		<div id="related-video-container">
+		</div>
+	</div>
+
+<script src="./js/script.js"></script>
+
+</body>
+
+</html>
