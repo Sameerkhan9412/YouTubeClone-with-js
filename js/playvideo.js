@@ -1,7 +1,7 @@
 /*--------------------------
 declare API key
 --------------------------*/
-let API_KEY="AIzaSyDw9iF7ePEmSpw15oYs6mHHWqK30kuhh9k";
+let API_KEY="AIzaSyCONoIZGywddQGUi7JcB8MKxK_ItzHNYjI";
 //let API_KEY="AIzaSyAQeq8AFNng2zFmZme6YeJJ4xNBKB2P-Xg";
 //let API_KEY="AIzaSyD2P0IW0q5lqC64zYHkGhrJmTEH7wIeneU";
 var video_id=localStorage.getItem("video");
