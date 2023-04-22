@@ -1,5 +1,5 @@
 // api key
-let API_KEY="AIzaSyDw9iF7ePEmSpw15oYs6mHHWqK30kuhh9k";
+let API_KEY="AIzaSyCONoIZGywddQGUi7JcB8MKxK_ItzHNYjI";
 var search_query=localStorage.getItem("video");
 
 /*----------------------------------------
