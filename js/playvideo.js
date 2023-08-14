@@ -9,6 +9,8 @@ async function video_detail(){
 	let res=await fetch(`https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id=${video_id}&maxResults=1&regionCode=in&key=${API_KEY}`);
 	let data=await res.json();
 	display_video_and_details(data.items);
+	const tag=data.items[0].snippet.tags[1];
+	search_videos(tag);
 }
 video_detail();
 function display_video_and_details(video_data){
@@ -22,7 +24,7 @@ function display_video_and_details(video_data){
 		let publish_date=snippet.publishedAt;
 		let playvideo=document.getElementById("play-video");
 		playvideo.innerHTML=`
-			<iframe src="https://www.youtube.com/embed/${video_id}?autoplay=1&mute=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+			<iframe src="https://www.youtube.com/embed/${video_id}?autoplay=0&mute=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 			<h3>${video_title}</h3>
 			<div class="play-video-info">
 				<div class="publisher">
@@ -33,7 +35,7 @@ function display_video_and_details(video_data){
 							<span>2k Subscribers</span>
 						</div>
 					</div>
-					<button class="subscribe" id="SubscribeBtn"> <img src="./images/icons8-notification-bell-64.png" class="notification-bell" alt="">Subscribe</button>
+					<button class="subscribe" id="SubscribeBtn"> <img src="./images/icons8-notification-50.png" class="notification-bell" alt="">Subscribe</button>
 			
 				</div>
 				<div class="video-imp-icon">
@@ -56,13 +58,23 @@ function display_video_and_details(video_data){
 /*------------------------------
 		search related video
 ------------------------------*/
-async function search_related_videos(video_id){
-	let res=await fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=50&regionCode=in&relatedToVideoId=${video_id}&type=video&key=${API_KEY}`);
+
+async function search_videos(search_query){
+	console.log(query.value);
+	let res=await fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=5&q=${search_query}&regionCode=in&key=${API_KEY}`);
 	let data=await res.json();
-	console.log(data.items);
+	console.log(data.items)
 	display_related_video(data.items);
 }
-search_related_videos(video_id);
+
+
+// async function search_related_videos(video_id){
+// 	let res=await fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=50&regionCode=in&relatedToVideoId=${video_id}&type=video&key=${API_KEY}`);
+// 	let data=await res.json();
+// 	console.log(data.items);
+// 	display_related_video(data.items);
+// }
+// search_related_videos(video_id);
 function display_related_video(data2){
 	console.log(data2);
 	let related_video_container=document.getElementById("related-video-container");

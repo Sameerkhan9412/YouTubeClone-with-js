@@ -607,7 +607,7 @@ media queries for make responsive
 	.sidebar{
 	width:0px;
 	position:fixed;
-	top:0;
+	top:-10px;
 	bottom:0;
 	left :0;
 	background-color:#fff;

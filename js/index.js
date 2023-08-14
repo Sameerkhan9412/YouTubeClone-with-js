@@ -1,8 +1,5 @@
 // Api key
 let API_KEY="AIzaSyCONoIZGywddQGUi7JcB8MKxK_ItzHNYjI";
-//let API_KEY="AIzaSyDw9iF7ePEmSpw15oYs6mHHWqK30kuhh9k";
-//let API_KEY="AIzaSyAQeq8AFNng2zFmZme6YeJJ4xNBKB2P-Xg";
-//let API_KEY="AIzaSyD2P0IW0q5lqC64zYHkGhrJmTEH7wIeneU";
 /*----------------------------------
 	function for fetching popular video
 -------------------------------------*/
@@ -62,6 +59,7 @@ async function search_func(){
 	window.location.href="search_page.html";
 }
 submit_btn.addEventListener("click",search_func);
+console.log("hello")
 query.addEventListener("keydown", function (e) {
     if (e.key === "Enter") {  
       validate(e);
